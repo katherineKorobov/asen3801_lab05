@@ -131,6 +131,13 @@ aircraft_surfaces_2 = [0.1079;0;0;0.3182];
 aircraft_state_3 = [0;0;-1800;15*pi/180;-12*pi/180;270*pi/180;19;3;-2;0.08*pi/180;-0.2*pi/180;0];
 aircraft_surfaces_3 = [5*pi/180;2*pi/180;-13*pi/180;0.3];
 
+aircraft_state_4 = [0;0;-1800;0;0.02780;0;20.99;0;0.5837;0;0;0];
+aircraft_surfaces_4 = [0.1079;0;0;0.3182];
+
+doublet_size = 15 * pi/180; %Rads
+doublet_time = 0.25; %seconds
+
+
 odefun1 = @(time,aircraft_state) AircraftEOM(time, aircraft_state, aircraft_surfaces_1, wind_inertial,aircraft_parameters);
 [t1,X1] = ode45(odefun1,[0,time],aircraft_state_1);
 U1 = zeros(4,length(X1));
@@ -143,6 +150,11 @@ odefun3 = @(time,aircraft_state) AircraftEOM(time, aircraft_state, aircraft_surf
 [t3,X3] = ode45(odefun3,[0,time],aircraft_state_3);
 U3 = zeros(4,length(X3));
 
+odefun4=@(time,aircraft_state) AircraftEOMDoublet(time, aircraft_state_4, aircraft_surfaces, doublet_size, doublet_time, wind_inertial, aircraft_parameters);
+[t4,X4] = ode45(odefun2, [0,time],aircraft_state_4);
+U4 = zeros(4,length(X4));
+
 PlotAircraftSim(t1, X1, U1, [1,2,3,4,5,6], 'b')
 PlotAircraftSim(t2, X2, U2, [7,8,9,10,11,12], 'b')
 PlotAircraftSim(t3, X3, U3, [13,14,15,16,17,18], 'b')
+PlotAircraftSim(t4, X4, U4, [19,20,21,22,23,24], 'b')
