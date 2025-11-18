@@ -45,3 +45,9 @@ q_dot = (Gamma5*p*r-Gamma6*(p^2-r^2)) + (M/Iy);
 r_dot = (Gamma7*p*q-Gamma1*q*r) + (Gamma4*L+Gamma8*N);
 
 xdot = [x_dot; y_dot; z_dot; phi_dot; theta_dot; psi_dot; u_dot; v_dot; w_dot; p_dot; q_dot; r_dot];
+
+p_dot = (Gamma1*p*q-Gamma2*q*r) + (Gamma3*L + Gamma4*N);
+q_dot = (Gamma5*p*r-Gamma6*(p^2-r^2)) + (M/Iy);
+r_dot = (Gamma7*p*q-Gamma1*q*r) + (Gamma4*L+Gamma8*N);
+
+xdot = [x_dot; y_dot; z_dot; phi_dot; theta_dot; psi_dot; u_dot; v_dot; w_dot; p_dot; q_dot; r_dot];
