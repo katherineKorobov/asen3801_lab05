@@ -118,7 +118,7 @@ aircraft_parameters.CYr = 0.213412;
 
 
 %% Run ODE with function
-time= 60;
+time= 200;
 
 
 aircraft_state_1 = [0;0;-1608.34;0;0;0;21;0;0;0;0;0];
