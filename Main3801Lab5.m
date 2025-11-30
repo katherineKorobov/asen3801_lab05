@@ -126,8 +126,7 @@ time= 200;
 prob_2_1 = 0;
 prob_2_2 = 0;
 prob_2_3 = 0;
-prob_3_1 = 1;
-prob3_2 = 0;
+prob_3 = 1;
 
 %% Problem 2
 
@@ -181,6 +180,6 @@ for i = 1:length(t4)
     U4(1,i) = doublet_time_adjustor(t4(i), aircraft_surfaces_4(1), doublet_size, doublet_time);
 end
 
-if prob_3_1
+if prob_3
     PlotAircraftSim(t4, X4, U4, [19,20,21,22,23,24], 'b')
 end
