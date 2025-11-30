@@ -186,7 +186,7 @@ function PlotAircraftSim(time, aircraft_state_array, control_input_array, fig, c
     zlabel("Z Position (Up -) [m]",FontSize=14);
     title("3D Visualization of Inertial Position",FontSize=18);
     cMap.Title.String = "Time [s]";
-	zlim([-20 0])
+	%zlim([-1800 0])
 	set(gca,'YDir','reverse');
 	set(gca,'ZDir','reverse');
 end
