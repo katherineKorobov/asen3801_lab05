@@ -165,7 +165,7 @@ if prob_2_3
 end
 
 %% Problem 3
-time_4 = 100; %[s]
+time_4 = 10; %[s]
 doublet_size = 15 * pi/180; %Rads
 doublet_time = 0.25; %seconds
 
